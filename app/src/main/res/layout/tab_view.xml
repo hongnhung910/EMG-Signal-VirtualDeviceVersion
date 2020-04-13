@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#444444">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/ap_white">
+
+                        <LinearLayout
+                            android:id="@+id/Layout_graph"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/ap_white">
+                            <com.jjoe64.graphview.GraphView
+                                android:id="@+id/time_chart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/ap_white"
+                                android:layout_marginBottom="@dimen/general_margin"
+                                android:layout_marginTop="@dimen/general_margin"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/Layout_graph"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/domainSeries"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_small"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/Layout_graph"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/amplitude_mv"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_small"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/ap_white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Power Spectrum"
+                            android:padding="@dimen/small_padding"
+                            android:textColor="@color/colorPrimaryDark"/>
+
+                        <RadioGroup
+                            android:id="@+id/group_radio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rd_fft_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Linear"
+                                android:textColor="@color/colorPrimary"
+                                android:checked="true"
+                                android:onClick="onRadioButtonClicked"/>
+                            <RadioButton
+                                android:id="@+id/rd_db_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="dB"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginLeft="@dimen/small_padding"
+                                android:onClick="onRadioButtonClicked"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/ap_white">
+                        <LinearLayout
+                            android:id="@+id/Layout_graph2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/ap_white">
+                            <com.jjoe64.graphview.GraphView
+                                android:id="@+id/frequency_chart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/ap_white"
+                                android:layout_marginBottom="@dimen/general_margin"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/Layout_graph2"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/frequencydomain"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_small"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+</TabHost>
+</LinearLayout>

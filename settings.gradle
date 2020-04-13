@@ -1,0 +1,2 @@
+rootProject.name='EMG-Signal-VirtualDeviceVersion'
+include ':app'
