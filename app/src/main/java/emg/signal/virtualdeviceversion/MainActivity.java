@@ -83,9 +83,10 @@ public class MainActivity extends AppCompatActivity {
                 { Toast.makeText(MainActivity.this, "No EMG signal data available yet", Toast.LENGTH_SHORT).show();}
                 else*/ {
                     if (btnSaveData.getText().equals("Save")) {
+                        //create data to save here
                         data1Save = new ArrayList<>();
                         for (int i=0; i<100; i++){
-                            data1Save.add(i + 0.1);
+                            data1Save.add((Math.random() * 10) + 3);
                         }
                         btnSaveData.setText("Saving");
                         isSaving = true;
